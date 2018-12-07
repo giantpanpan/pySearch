@@ -1,5 +1,4 @@
 import pytest
-
 from ..search import Search
 
 def test_builtLink():
@@ -7,4 +6,5 @@ def test_builtLink():
     tmpSearch.setEngine("amazon")
     tmpSearch.setDomain("com")
     tmpSearch.setQuery(["test", "query"])
-    assert tmpSearch.buildLink() == "http://www.amazon.com/s/keywords=test%20query"
+    assert tmpSearch.buildLink() == ("http://www.amazon.com/s/keywords"
+    + "=test%20query")
